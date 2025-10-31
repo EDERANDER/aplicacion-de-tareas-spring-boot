@@ -1,0 +1,225 @@
+openapi: 3.0.1
+info:
+  title: API de Gestión de Tareas
+  description: API para la gestión de usuarios y sus tareas pendientes.
+  version: v0.0.1-SNAPSHOT
+  contact:
+    name: Eder
+    email: eder@example.com
+servers:
+  - url: http://localhost:8080
+    description: Servidor de desarrollo
+tags:
+  - name: Usuarios
+    description: Operaciones para la gestión de usuarios
+  - name: Tareas
+    description: Operaciones para la gestión de tareas de un usuario
+paths:
+  /api/usuarios/crearUsuario:
+    post:
+      tags:
+        - Usuarios
+      summary: Crear un nuevo usuario
+      description: Crea un nuevo usuario en la base de datos.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UsuarioDto'
+      responses:
+        '200':
+          description: Usuario creado exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UsuarioDto'
+        '400':
+          description: Datos de entrada inválidos
+  /api/usuarios/eliminarUsuario/{id}:
+    delete:
+      tags:
+        - Usuarios
+      summary: Eliminar un usuario
+      description: Elimina un usuario por su ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '204':
+          description: Usuario eliminado exitosamente
+        '404':
+          description: Usuario no encontrado
+  /api/tareas/crearTarea/{idUsuario}:
+    post:
+      tags:
+        - Tareas
+      summary: Crear una nueva tarea para un usuario
+      description: Crea una nueva tarea y la asocia a un usuario por su ID.
+      parameters:
+        - name: idUsuario
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TareaDto'
+      responses:
+        '200':
+          description: Tarea creada exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TareaDto'
+        '400':
+          description: Datos de entrada inválidos
+        '404':
+          description: Usuario no encontrado
+  /api/tareas/actualizarTarea/{idUsuario}/{idTarea}:
+    put:
+      tags:
+        - Tareas
+      summary: Actualizar una tarea existente
+      description: Actualiza una tarea existente para un usuario específico.
+      parameters:
+        - name: idUsuario
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: idTarea
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TareaDto'
+      responses:
+        '200':
+          description: Tarea actualizada exitosamente
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TareaDto'
+        '400':
+          description: Datos de entrada inválidos
+        '404':
+          description: Usuario o tarea no encontrados
+  /api/tareas/eliminarTarea/{idUsuario}/{idTarea}:
+    delete:
+      tags:
+        - Tareas
+      summary: Eliminar una tarea
+      description: Elimina una tarea específica de un usuario.
+      parameters:
+        - name: idUsuario
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: idTarea
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '204':
+          description: Tarea eliminada exitosamente
+        '404':
+          description: Usuario o tarea no encontrados
+  /api/tareas/listaTareas/{idUsuario}:
+    get:
+      tags:
+        - Tareas
+      summary: Listar las tareas de un usuario
+      description: Obtiene la lista de todas las tareas de un usuario por su ID.
+      parameters:
+        - name: idUsuario
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Lista de tareas obtenida exitosamente
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TareaDto'
+        '404':
+          description: Usuario no encontrado
+components:
+  schemas:
+    UsuarioDto:
+      type: object
+      description: DTO para representar un usuario
+      properties:
+        id:
+          type: integer
+          format: int64
+          description: ID del usuario
+          example: 1
+        nombre:
+          type: string
+          description: Nombre del usuario
+          example: Juan Perez
+        email:
+          type: string
+          format: email
+          description: Email del usuario
+          example: juan.perez@example.com
+        contraseña:
+          type: string
+          description: Contraseña del usuario
+          example: password123
+        tareas:
+          type: array
+          description: Lista de tareas asociadas al usuario
+          items:
+            $ref: '#/components/schemas/TareaDto'
+    TareaDto:
+      type: object
+      description: DTO para representar una tarea
+      properties:
+        id:
+          type: integer
+          format: int64
+          description: ID de la tarea
+          example: 101
+        titulo:
+          type: string
+          description: Título de la tarea
+          example: Hacer la compra
+        descripcion:
+          type: string
+          description: Descripción de la tarea
+          example: Comprar leche, huevos y pan
+        recordatorio:
+          type: string
+          format: date-time
+          description: Fecha y hora del recordatorio
+          example: '2025-12-31T10:30:00'
+        estadoTarea:
+          type: boolean
+          description: Estado de la tarea
+          example: false
