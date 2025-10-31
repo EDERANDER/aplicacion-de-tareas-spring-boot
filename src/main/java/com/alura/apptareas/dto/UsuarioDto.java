@@ -3,10 +3,8 @@ package com.alura.apptareas.dto;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.PastOrPresent;
 import jakarta.validation.constraints.Size;
 
-import java.util.Date;
 import java.util.List;
 
 public record UsuarioDto(
