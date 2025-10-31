@@ -1,6 +1,11 @@
 # Documentación de la API de AppTareas
 
-Esta es la documentación para la API de AppTareas.
+Esta es la documentación para la API de AppTareas, fue desarrollada en Spring Boot 3.5.6 - Java 21, para una interfaz en Kotlin con Android Studio.
+La aplicacion tiene las funcionalidadesmas importantes de una aplicacion de tareas:
+#### 1. Crear usuario 
+#### 2. Crear Tareas
+#### 3. Automatizacion de notificaciones con Gmail (proximamente WhatsApp)
+#### 4. Recomendacion de tareas con IA por usuario.
 
 ---
 
