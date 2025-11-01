@@ -20,12 +20,12 @@ public class UsuarioService {
     private PasswordEncoder passwordEncoder;
 
     public Usuario crearUsuario(UsuarioDto usuario){
-        Usuario usuario1 = new Usuario();
-        usuario1.setNombre(usuario.nombre());
-        usuario1.setEmail(usuario.email());
-        usuario1.setContraseña(passwordEncoder.encode(usuario.contraseña()));
-        usuario1.setId(usuario.id());
-        return usuarioRepository.save(usuario1);
+        Usuario usuarioNuevo = new Usuario();
+        usuarioNuevo.setNombre(usuario.nombre());
+        usuarioNuevo.setEmail(usuario.email());
+        usuarioNuevo.setContraseña(passwordEncoder.encode(usuario.contraseña()));
+        usuarioNuevo.setId(usuario.id());
+        return usuarioRepository.save(usuarioNuevo);
     }
 
     public void eliminarPerfil(Long id){
