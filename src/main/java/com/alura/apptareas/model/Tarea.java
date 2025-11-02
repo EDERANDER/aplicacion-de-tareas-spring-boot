@@ -20,7 +20,7 @@ public class Tarea {
 
     @Column(name = "recordatorio", nullable = false)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
-    private LocalDateTime timestamp;
+    private LocalDateTime recordatorio;
 
     @Column(nullable = false)
     private boolean estadoTarea = false;
@@ -68,12 +68,12 @@ public class Tarea {
         this.descripcion = descripcion;
     }
 
-    public LocalDateTime getTimestamp() {
-        return timestamp;
+    public LocalDateTime getRecordatorio() {
+        return recordatorio;
     }
 
-    public void setTimestamp(LocalDateTime timestamp) {
-        this.timestamp = timestamp;
+    public void setRecordatorio(LocalDateTime timestamp) {
+        this.recordatorio = timestamp;
     }
 
     public boolean isEstadoTarea() {
