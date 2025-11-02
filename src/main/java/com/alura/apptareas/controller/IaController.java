@@ -15,7 +15,7 @@ public class IaController {
     @Autowired
     private ConsultaChatGpt consultaChatGpt;
 
-    @PostMapping("/ia/{idUsuario}")
+    @GetMapping("/ia/{idUsuario}")
     public ResponseEntity<?> consultaIa(@PathVariable Long idUsuario,@Valid @RequestBody ConsultaRequest request) {
         try {
             String result = consultaChatGpt.consultaIa(request.getTexto(), idUsuario);
