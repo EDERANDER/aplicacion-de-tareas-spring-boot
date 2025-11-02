@@ -29,12 +29,9 @@ public class UsuarioService {
     }
 
     public void eliminarPerfil(Long id){
-        Optional<Usuario> usuario = usuarioRepository.findById(id);
-        if(usuario.isPresent()){
-            usuarioRepository.deleteById(id);
-        }else{
-            throw new RuntimeException("No se encontro al usuario");
-        }
+        Usuario usuario = usuarioRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+        usuarioRepository.deleteById(usuario.getId());
     }
 
     public Usuario login(String email, String contraseña) {
