@@ -30,7 +30,7 @@ public class TareaService {
         Tarea tareaModel = new Tarea();
         tareaModel.setTitulo(tarea.titulo());
         tareaModel.setDescripcion(tarea.descripcion());
-        tareaModel.setTimestamp(tarea.recordatorio());
+        tareaModel.setRecordatorio(tarea.recordatorio());
         tareaModel.setEstadoTarea(tarea.estadoTarea());
         tareaModel.setUsuario(usuario);
 
@@ -56,7 +56,7 @@ public class TareaService {
             tareaExistente.setDescripcion(tareaActualizada.descripcion());
         }
         if (tareaActualizada.recordatorio() != null) {
-            tareaExistente.setTimestamp(tareaActualizada.recordatorio());
+            tareaExistente.setRecordatorio(tareaActualizada.recordatorio());
         }
         if (tareaActualizada.estadoTarea() != null) {
             tareaExistente.setEstadoTarea(tareaActualizada.estadoTarea());
