@@ -52,7 +52,7 @@ public class RecordatorioScheduler {
             String mensaje = "Hola " + tarea.getUsuario().getNombre() + "!\n\n"
                     + "Tienes una tarea pendiente:\n"
                     + tarea.getDescripcion() + "\n\n"
-                    + "Fecha programada: " + tarea.getTimestamp();
+                    + "Fecha programada: " + tarea.getRecordatorio();
 
             emailService.enviarCorreo(tarea.getUsuario().getEmail(), asunto, mensaje);
 
