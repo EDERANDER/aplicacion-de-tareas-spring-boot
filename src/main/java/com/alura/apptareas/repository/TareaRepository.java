@@ -11,6 +11,6 @@ import java.util.List;
 
 @Repository
 public interface TareaRepository extends JpaRepository<Tarea, Long> {
-    @Query("SELECT t FROM Tarea t WHERE t.timestamp >= :inicio AND t.timestamp < :fin AND t.notificado = false")
+    @Query("SELECT t FROM Tarea t WHERE t.recordatorio >= :inicio AND t.recordatorio < :fin AND t.notificado = false")
     List<Tarea> findTareasPendientesParaNotificar(@Param("inicio") LocalDateTime inicio, @Param("fin") LocalDateTime fin);
 }
