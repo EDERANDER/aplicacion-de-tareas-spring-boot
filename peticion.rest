@@ -1,0 +1,66 @@
+###CONTROLADOR DE USUARIOS
+
+###CREAR USUARIO
+POST http://localhost:8080/api/usuarios/crearUsuario
+Content-Type: application/json
+
+{
+  "nombre" : "EDER_ANDER",
+  "email" : "ederander123@gmail.com",
+  "contraseña" : "Alohomora19"
+}
+
+### ELIMINAR USUARIO
+DELETE http://localhost:8080/api/usuarios/eliminarUsuario/3
+Content-Type: application/json
+
+### LOGIN USUARIO
+POST http://localhost:8080/api/usuarios/login
+Content-Type: application/json
+
+{
+  "email": "ederander123@gmail.com",
+  "contraseña": "Alohomora19"
+}
+
+###CONTROLADOR DE TAREAS
+
+###CREAR NUEVA TAREA
+POST http://localhost:8080/api/tareas/crearTarea/2
+Content-Type: application/json
+
+{
+  "titulo": "Jugar videojuegos 3",
+  "descripcion": "El dia lunes debemos jugar muchos videojuegos de verdaa",
+  "recordatorio": "2025-11-02 10:25",
+  "estadoTarea": false
+}
+
+###ACTUALIZAR TAREA
+PUT http://localhost:8080/api/tareas/actualizarTarea/1/1
+Content-Type: application/json
+
+{
+  "titulo": "Hacer cositas",
+  "descripcion": "Comprar leche, huevos y pan.",
+  "recordatorio": "2025-11-02 09:52",
+  "estadoTarea": false
+}
+
+###ELIMINAR TAREA
+DELETE http://localhost:8080/api/tareas/eliminarTarea/1/2
+Content-Type: application/json
+
+###LISTAR TAREAS DE UN USUARIO
+GET http://localhost:8080/api/tareas/listaTareas/2
+Content-Type: application/json
+
+###CONTROLADOR DE IA
+GET http://localhost:8080/api/ia/2
+Content-Type: application/json
+
+{
+  "texto" : "¿quien eres?"
+}
+
+
