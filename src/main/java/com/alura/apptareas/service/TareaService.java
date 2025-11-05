@@ -49,18 +49,12 @@ public class TareaService {
         if (!tareaExistente.getUsuario().getId().equals(idUsuario)) {
             throw new SecurityException("Acción no permitida: La tarea no pertenece al usuario especificado.");
         }
-        if (tareaActualizada.titulo() != null) {
-            tareaExistente.setTitulo(tareaActualizada.titulo());
-        }
-        if (tareaActualizada.descripcion() != null) {
-            tareaExistente.setDescripcion(tareaActualizada.descripcion());
-        }
-        if (tareaActualizada.recordatorio() != null) {
-            tareaExistente.setRecordatorio(tareaActualizada.recordatorio());
-        }
-        if (tareaActualizada.estadoTarea() != null) {
-            tareaExistente.setEstadoTarea(tareaActualizada.estadoTarea());
-        }
+
+        tareaExistente.setTitulo(tareaActualizada.titulo());
+        tareaExistente.setDescripcion(tareaActualizada.descripcion());
+        tareaExistente.setRecordatorio(tareaActualizada.recordatorio());
+        tareaExistente.setEstadoTarea(tareaActualizada.estadoTarea());
+
         return tareaRepository.save(tareaExistente);
     }
 
