@@ -62,7 +62,8 @@ public class RecordatorioScheduler {
             System.out.println("Correo enviado a " + tarea.getUsuario().getEmail() + " "
                     + ahora.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
         } catch (Exception e) {
-            System.err.println("Error al enviar correo para tarea ID " + tarea.getId() + ": " + e.getMessage());
+            System.out.println("Error al enviar correo para tarea ID " + tarea.getId() + ": " + e.getMessage());
+            e.printStackTrace(System.out);
         }
     }
 }
