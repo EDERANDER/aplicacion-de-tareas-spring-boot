@@ -26,13 +26,13 @@ Content-Type: application/json
 ###CONTROLADOR DE TAREAS
 
 ###CREAR NUEVA TAREA
-POST https://aplicacion-de-tareas-spring-boot.onrender.com/api/tareas/crearTarea/6
+POST https://aplicacion-de-tareas-spring-boot.onrender.com/api/tareas/crearTarea/8
 Content-Type: application/json
 
 {
   "titulo": "Jugar videojuegos 3",
   "descripcion": "El dia lunes debemos jugar muchos videojuegos de verdaa",
-  "recordatorio": "2025-11-02 10:25",
+  "recordatorio": "2025-12-09 21:09",
   "estadoTarea": false
 }
 
