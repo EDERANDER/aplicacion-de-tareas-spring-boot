@@ -1,32 +1,32 @@
 ###CONTROLADOR DE USUARIOS
 
 ###CREAR USUARIO
-POST http://localhost:8080/api/usuarios/crearUsuario
+POST https://aplicacion-de-tareas-spring-boot.onrender.com/api/usuarios/crearUsuario
 Content-Type: application/json
 
 {
-  "nombre" : "EDER_ANDER",
-  "email" : "ederander123@gmail.com",
+  "nombre" : "Alice",
+  "email" : "alice.m@gmail.com",
   "contraseña" : "Alohomora19"
 }
 
 ### ELIMINAR USUARIO
-DELETE http://localhost:8080/api/usuarios/eliminarUsuario/3
+DELETE https://aplicacion-de-tareas-spring-boot.onrender.com/api/usuarios/eliminarUsuario/2
 Content-Type: application/json
 
 ### LOGIN USUARIO
-POST http://localhost:8080/api/usuarios/login
+POST https://aplicacion-de-tareas-spring-boot.onrender.com/api/usuarios/login
 Content-Type: application/json
 
 {
-  "email": "ederander123@gmail.com",
+  "email": "alice.m@gmail.com",
   "contraseña": "Alohomora19"
 }
 
 ###CONTROLADOR DE TAREAS
 
 ###CREAR NUEVA TAREA
-POST http://localhost:8080/api/tareas/crearTarea/2
+POST https://aplicacion-de-tareas-spring-boot.onrender.com/api/tareas/crearTarea/6
 Content-Type: application/json
 
 {
@@ -37,26 +37,26 @@ Content-Type: application/json
 }
 
 ###ACTUALIZAR TAREA
-PUT http://localhost:8080/api/tareas/actualizarTarea/1/1
+PUT https://aplicacion-de-tareas-spring-boot.onrender.com/api/tareas/actualizarTarea/6/50
 Content-Type: application/json
 
 {
   "titulo": "Hacer cositas",
   "descripcion": "Comprar leche, huevos y pan.",
-  "recordatorio": "2025-11-02 09:52",
+  "recordatorio": "2025-12-12 09:52",
   "estadoTarea": false
 }
 
 ###ELIMINAR TAREA
-DELETE http://localhost:8080/api/tareas/eliminarTarea/1/2
+DELETE https://aplicacion-de-tareas-spring-boot.onrender.com/api/tareas/eliminarTarea/6/50
 Content-Type: application/json
 
 ###LISTAR TAREAS DE UN USUARIO
-GET http://localhost:8080/api/tareas/listaTareas/2
+GET https://aplicacion-de-tareas-spring-boot.onrender.com/api/tareas/listaTareas/6
 Content-Type: application/json
 
 ###CONTROLADOR DE IA
-GET http://localhost:8080/api/ia/2
+GET https://aplicacion-de-tareas-spring-boot.onrender.com/api/ia/6
 Content-Type: application/json
 
 {
