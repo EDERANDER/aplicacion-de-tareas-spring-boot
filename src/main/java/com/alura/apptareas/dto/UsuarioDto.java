@@ -16,6 +16,10 @@ public record UsuarioDto(
         @Email(message = "Debe ingresar un correo válido")
         String email,
 
+        @NotBlank(message = "Debe contener el numero de whatsapp")
+        @Size(max = 20, message = "maximo 20 caracteres")
+        String numeroWhatsapp,
+
         @NotBlank(message = "Debe ingresar una contraseña")
         @Size(min = 6, message = "La contraseña debe tener al menos 6 caracteres")
         String contraseña

@@ -25,6 +25,7 @@ public class UsuarioService {
         usuarioNuevo.setEmail(usuario.email());
         usuarioNuevo.setContraseña(passwordEncoder.encode(usuario.contraseña()));
         usuarioNuevo.setId(usuario.id());
+        usuarioNuevo.setNumeroWhatsapp(usuario.numeroWhatsapp());
         return usuarioRepository.save(usuarioNuevo);
     }
 
