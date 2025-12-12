@@ -46,10 +46,18 @@ public class RecordatorioScheduler {
     @Async
     public void enviarCorreoAsync(Tarea tarea, LocalDateTime ahora) {
         try {
-            String mensaje = "Hola " + tarea.getUsuario().getNombre() + "!\n\n"
-                    + "Tienes una tarea pendiente:\n"
-                    + tarea.getDescripcion() + "\n\n"
-                    + "Fecha programada: " + tarea.getRecordatorio();
+            String mensaje =
+                            "📚 *NUEVA TAREA* \n\n" +
+                            "👋 Hola *" + tarea.getUsuario().getNombre() + "*!\n\n" +
+                            "Tienes una tarea pendiente. Aquí están los detalles:\n\n" +
+                            "📝 *Título:*\n" +
+                            "➡️ " + tarea.getTitulo() + "\n\n" +
+                            "📄 *Descripción:*\n" +
+                            "➡️ " + tarea.getDescripcion() + "\n\n" +
+                            "📅 *Fecha programada:*\n" +
+                            "➡️ " + tarea.getRecordatorio().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")) + "\n\n" +
+                            "🔔 *No olvides completarla.* ¡Tú puedes! 💪😄\n\n";
+
 
             whatsappService.enviarMensaje(tarea.getUsuario().getNumeroWhatsapp(), mensaje);
 
