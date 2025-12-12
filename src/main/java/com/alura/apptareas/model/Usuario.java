@@ -21,6 +21,9 @@ public class Usuario {
     @Column(length = 60, unique = true, nullable = false)
     private String email;
 
+    @Column(name = "numero_whatsapp", length = 20, nullable = false, unique = true)
+    private String numeroWhatsapp;
+
     @Column(length = 100, nullable = false)
     private String contraseña;
 
@@ -88,5 +91,13 @@ public class Usuario {
 
     public void setTareas(List<Tarea> tareas) {
         this.tareas = tareas;
+    }
+
+    public String getNumeroWhatsapp() {
+        return numeroWhatsapp;
+    }
+
+    public void setNumeroWhatsapp(String numeroWhatsapp) {
+        this.numeroWhatsapp = numeroWhatsapp;
     }
 }

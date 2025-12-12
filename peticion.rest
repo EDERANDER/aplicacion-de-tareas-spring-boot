@@ -64,3 +64,29 @@ Content-Type: application/json
 }
 
 
+
+###
+# curl --request POST
+#  --url https://apiwsp.factiliza.com/v1/message/sendtext/NTE5MTA5NTkyMzA%3D
+#  --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzODg0MiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6ImNvbnN1bHRvciJ9.IhH9bpi5lvjDgflrvh1Ry5crQz-yMYBucUNsTfy6KRs'
+#  --header 'Content-Type: application/json'
+#  --data '
+#{
+#  "number": "51910959230",
+#  "text": "PRUEBA DE NOTIFICACION DE TAREAS AUTOMATICAS"
+#}
+#'
+POST https://apiwsp.factiliza.com/v1/message/sendtext/NTE5MTA5NTkyMzA%3D
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzODg0MiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6ImNvbnN1bHRvciJ9.IhH9bpi5lvjDgflrvh1Ry5crQz-yMYBucUNsTfy6KRs
+Content-Type: application/json
+
+
+{
+  "number": "51910959230",
+  "text": "PRUEBA DE NOTIFICACION DE TAREAS AUTOMATICAS"
+}
+
+
+###
+
+

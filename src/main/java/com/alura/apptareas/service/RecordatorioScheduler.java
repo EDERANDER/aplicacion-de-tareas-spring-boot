@@ -22,10 +22,8 @@ public class RecordatorioScheduler {
     @Autowired
     private TareaRepository tareaRepository;
 
-    @Autowired
-    private EmailService emailService;
+    @Autowired WhatsappService whatsappService;
 
-    // evita solapamientossss: ejecuta la siguiente solo cuando acabooo
     @Scheduled(fixedDelay = 60000)
     @Transactional
     public void revisarTareasPendientes() {
@@ -48,21 +46,20 @@ public class RecordatorioScheduler {
     @Async
     public void enviarCorreoAsync(Tarea tarea, LocalDateTime ahora) {
         try {
-            String asunto = "Recordatorio: " + tarea.getTitulo();
             String mensaje = "Hola " + tarea.getUsuario().getNombre() + "!\n\n"
                     + "Tienes una tarea pendiente:\n"
                     + tarea.getDescripcion() + "\n\n"
                     + "Fecha programada: " + tarea.getRecordatorio();
 
-            emailService.enviarCorreo(tarea.getUsuario().getEmail(), asunto, mensaje);
+            whatsappService.enviarMensaje(tarea.getUsuario().getNumeroWhatsapp(), mensaje);
 
             tarea.setNotificado(true);
             tareaRepository.save(tarea);
 
-            System.out.println("Correo enviado a " + tarea.getUsuario().getEmail() + " "
+            System.out.println("MENSAJE ENVIADO " + tarea.getUsuario().getEmail() + " "
                     + ahora.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
         } catch (Exception e) {
-            System.out.println("Error al enviar correo para tarea ID " + tarea.getId() + ": " + e.getMessage());
+            System.out.println("Error al enviar mensaje para tarea ID " + tarea.getId() + ": " + e.getMessage());
             e.printStackTrace(System.out);
         }
     }
