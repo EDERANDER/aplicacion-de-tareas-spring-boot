@@ -13,4 +13,8 @@ import java.util.List;
 public interface TareaRepository extends JpaRepository<Tarea, Long> {
     @Query("SELECT t FROM Tarea t WHERE t.recordatorio >= :inicio AND t.recordatorio < :fin AND t.notificado = false")
     List<Tarea> findTareasPendientesParaNotificar(@Param("inicio") LocalDateTime inicio, @Param("fin") LocalDateTime fin);
+
+    List<Tarea> findByUsuarioIdOrderByIdDesc(Long idUsuario);
+
+    Long id(Long id);
 }

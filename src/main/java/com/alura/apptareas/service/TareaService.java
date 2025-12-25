@@ -74,6 +74,6 @@ public class TareaService {
     public List<Tarea> listaTareas(Long idUsuario) {
         Usuario usuario = usuarioRepository.findById(idUsuario)
                 .orElseThrow(() -> new EntityNotFoundException("No se encontro usuario con id = " + idUsuario));
-        return usuario.getTareas();
+        return tareaRepository.findByUsuarioIdOrderByIdDesc(idUsuario);
     }
 }
