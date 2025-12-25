@@ -9,7 +9,6 @@ public record ActualizarTareaDto(
         String titulo,
         String descripcion,
         @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
-        @FutureOrPresent
         LocalDateTime recordatorio,
         Boolean estadoTarea
 ) {}

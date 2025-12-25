@@ -20,32 +20,32 @@ POST https://aplicacion-de-tareas-spring-boot.onrender.com/api/usuarios/login
 Content-Type: application/json
 
 {
-  "email": "alice.m@gmail.com",
+  "email": "ederander123@gmail.com",
   "contraseña": "Alohomora19"
 }
 
 ###CONTROLADOR DE TAREAS
 
 ###CREAR NUEVA TAREA
-POST https://aplicacion-de-tareas-spring-boot.onrender.com/api/tareas/crearTarea/3
+POST https://aplicacion-de-tareas-spring-boot.onrender.com/api/tareas/crearTarea/8
 Content-Type: application/json
 
 {
-  "titulo": "TAREA PRUEBA 1",
+  "titulo": "Esta tarea trata sobre programacion",
   "descripcion": "El dia lunes debemos jugar muchos videojuegos de verdaa",
   "recordatorio": "2025-12-12 17:37",
   "estadoTarea": false
 }
 
 ###ACTUALIZAR TAREA
-PUT https://aplicacion-de-tareas-spring-boot.onrender.com/api/tareas/actualizarTarea/6/50
+PUT https://aplicacion-de-tareas-spring-boot.onrender.com/api/tareas/actualizarTarea/8/30
 Content-Type: application/json
 
 {
   "titulo": "Hacer cositas",
   "descripcion": "Comprar leche, huevos y pan.",
-  "recordatorio": "2025-12-12 09:52",
-  "estadoTarea": false
+  "recordatorio": "2025-12-31 09:52",
+  "estadoTarea": true
 }
 
 ###ELIMINAR TAREA
@@ -53,11 +53,11 @@ DELETE https://aplicacion-de-tareas-spring-boot.onrender.com/api/tareas/eliminar
 Content-Type: application/json
 
 ###LISTAR TAREAS DE UN USUARIO
-GET https://aplicacion-de-tareas-spring-boot.onrender.com/api/tareas/listaTareas/3
+GET https://aplicacion-de-tareas-spring-boot.onrender.com/api/tareas/listaTareas/8
 Content-Type: application/json
 
 ###CONTROLADOR DE IA
-GET https://aplicacion-de-tareas-spring-boot.onrender.com/api/ia/6
+GET https://aplicacion-de-tareas-spring-boot.onrender.com/api/ia/8
 Content-Type: application/json
 
 {
