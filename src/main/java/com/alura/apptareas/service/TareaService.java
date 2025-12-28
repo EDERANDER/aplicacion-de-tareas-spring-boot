@@ -53,7 +53,8 @@ public class TareaService {
         tareaExistente.setTitulo(tareaActualizada.titulo());
         tareaExistente.setDescripcion(tareaActualizada.descripcion());
         tareaExistente.setRecordatorio(tareaActualizada.recordatorio());
-        tareaExistente.setEstadoTarea(tareaActualizada.estadoTarea());
+        tareaExistente.setEstadoTarea(false);
+        tareaExistente.setNotificado(false);
 
         return tareaRepository.save(tareaExistente);
     }

@@ -38,11 +38,11 @@ Content-Type: application/json
 }
 
 ###ACTUALIZAR TAREA
-PUT https://aplicacion-de-tareas-spring-boot.onrender.com/api/tareas/actualizarTarea/8/30
+PUT https://aplicacion-de-tareas-spring-boot.onrender.com/api/tareas/actualizarTarea/8/24
 Content-Type: application/json
 
 {
-  "titulo": "Hacer cositas",
+  "titulo": "putito",
   "descripcion": "Comprar leche, huevos y pan.",
   "recordatorio": "2025-12-31 09:52",
   "estadoTarea": true
