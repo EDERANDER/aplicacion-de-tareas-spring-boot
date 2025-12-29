@@ -12,7 +12,7 @@ public class WhatsappService {
 
     private WebClient webClient = WebClient.create();
 
-    private final String URL_BASE = "https://apiwsp.factiliza.com/v1/message/sendtext/NTE5MTA5NTkyMzA=";
+    private final String URL_BASE = "https://apiwsp.factiliza.com/v1/message/sendtext/NTE5MjE0MjA3NTk=";
     private final String BEARER_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzODg0MiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6ImNvbnN1bHRvciJ9.IhH9bpi5lvjDgflrvh1Ry5crQz-yMYBucUNsTfy6KRs";
 
     public boolean enviarMensaje(String numeroWhatsapp, String mensaje){

@@ -77,13 +77,13 @@ Content-Type: application/json
 #  "text": "PRUEBA DE NOTIFICACION DE TAREAS AUTOMATICAS"
 #}
 #'
-POST https://apiwsp.factiliza.com/v1/message/sendtext/NTE5MTA5NTkyMzA%3D
+POST https://apiwsp.factiliza.com/v1/message/sendtext/NTE5MjE0MjA3NTk=
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzODg0MiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6ImNvbnN1bHRvciJ9.IhH9bpi5lvjDgflrvh1Ry5crQz-yMYBucUNsTfy6KRs
 Content-Type: application/json
 
 
 {
-  "number": "51910959230",
+  "number": "51921420759",
   "text": "PRUEBA DE NOTIFICACION DE TAREAS AUTOMATICAS"
 }
 
