@@ -16,5 +16,5 @@ public interface TareaRepository extends JpaRepository<Tarea, Long> {
 
     List<Tarea> findByUsuarioIdOrderByIdDesc(Long idUsuario);
 
-    Long id(Long id);
+    void deleteAllByUsuarioId(Long usuarioId);
 }
