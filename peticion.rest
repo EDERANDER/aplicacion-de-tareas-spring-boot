@@ -20,7 +20,7 @@ POST https://aplicacion-de-tareas-spring-boot.onrender.com/api/usuarios/login
 Content-Type: application/json
 
 {
-  "email": "ederander123@gmail.com",
+  "email": "alice.789m@gmail.com",
   "contraseña": "Alohomora19"
 }
 
@@ -57,11 +57,11 @@ GET https://aplicacion-de-tareas-spring-boot.onrender.com/api/tareas/listaTareas
 Content-Type: application/json
 
 ###CONTROLADOR DE IA
-GET https://aplicacion-de-tareas-spring-boot.onrender.com/api/ia/8
+GET https://aplicacion-de-tareas-spring-boot.onrender.com/api/ia/14
 Content-Type: application/json
 
 {
-  "texto" : "¿quien eres?"
+  "texto" : "¿que tareas tengo?"
 }
 
 
