@@ -39,10 +39,10 @@ public class TareaService {
     }
 
     @Transactional
-    public Tarea eliminarTodasLasTareas(Long idUsuario){
+    public void eliminarTodasLasTareas(Long idUsuario){
         usuarioRepository.findById(idUsuario)
                 .orElseThrow(() -> new EntityNotFoundException("No se encontro usuario con id = " + idUsuario));
-        return usuarioRepository.deleteAllById(idUsuario);
+        usuarioRepository.deleteAllById(idUsuario);
     }
 
     @Transactional
