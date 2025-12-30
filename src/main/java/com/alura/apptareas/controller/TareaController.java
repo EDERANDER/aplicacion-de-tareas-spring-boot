@@ -18,7 +18,7 @@ public class TareaController {
     @Autowired
     private TareaService tareaService;
 
-    @DeleteMapping("/eliminarTodo{idUsuario}")
+    @DeleteMapping("/eliminarTodo/{idUsuario}")
     public Tarea eliminarTodo(@PathVariable Long idUusario){
         return tareaService.eliminarTodasLasTareas(idUusario);
     }
