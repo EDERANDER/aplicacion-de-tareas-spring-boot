@@ -19,8 +19,8 @@ public class TareaController {
     private TareaService tareaService;
 
     @DeleteMapping("/eliminarTodo/{idUsuario}")
-    public Tarea eliminarTodo(@PathVariable Long idUusario){
-        return tareaService.eliminarTodasLasTareas(idUusario);
+    public Tarea eliminarTodo(@PathVariable Long idUsuario){
+        return tareaService.eliminarTodasLasTareas(idUsuario);
     }
 
     @PostMapping("/crearTarea/{idUsuario}")
