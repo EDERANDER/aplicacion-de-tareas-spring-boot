@@ -18,6 +18,11 @@ public class TareaController {
     @Autowired
     private TareaService tareaService;
 
+    @DeleteMapping("/eliminarTodo{idUsuario}")
+    public Tarea eliminarTodo(@PathVariable Long idUusario){
+        return tareaService.eliminarTodasLasTareas(idUusario);
+    }
+
     @PostMapping("/crearTarea/{idUsuario}")
     public Tarea crearTarea(@PathVariable Long idUsuario,
                             @Valid @RequestBody TareaDto tarea) {

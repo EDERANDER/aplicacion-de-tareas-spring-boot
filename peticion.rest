@@ -52,6 +52,10 @@ Content-Type: application/json
 DELETE https://aplicacion-de-tareas-spring-boot.onrender.com/api/tareas/eliminarTarea/6/50
 Content-Type: application/json
 
+###ELIMINAR TODAS LAS TAREAS
+DELETE https://aplicacion-de-tareas-spring-boot.onrender.com/api/tareas/eliminarTodo/17
+Content-Type: application/json
+
 ###LISTAR TAREAS DE UN USUARIO
 GET https://aplicacion-de-tareas-spring-boot.onrender.com/api/tareas/listaTareas/8
 Content-Type: application/json
